@@ -1,6 +1,6 @@
 // Issue 1: Bigger text.
 // Issue 2: No 0 numbers.
-            
+
 var MAX = 10.0;
             
 var a = makeInitialRandomNumber();
@@ -9,10 +9,22 @@ var b = makeDependantNumber(a);
 var formatted_a = formattedNumber(a);
 var formatted_b = formattedNumber(b);
             
-var trick_numbers = makeTrickNumbers(a, b);
-            
+var trick_numbers = makeTrickNumbers(a, b); 
 var board = makeBoard(formatted_a, formatted_b, trick_numbers);
-            
+
+$(document).ready(function() {
+    var index = 0;
+    
+    $(".number").each(function() {
+       $(this).text(board[index]);
+       index++;
+    });
+    
+    $(".number").click(function() {
+        alert($(this).val());
+    });
+});
+
 function makeInitialRandomNumber() {
     return (Math.round((Math.random() * MAX) * 100) / 100);
 }
@@ -41,12 +53,12 @@ function similiarNumber(number) {
             
 function makeTrickNumbers(independant, dependant) {
     result = new Array();
-                
-    for (var k = 0; k < 4; k++) {
+    
+    for (k = 0; k < 4; k++) {
         result[k] = makeSimiliarNumber(independant, result);
     }
                 
-    for (var k = 4; k < 7; k++) {
+    for (k = 4; k < 7; k++) {
         result[k] = makeSimiliarNumber(dependant, result);
     }
                 
