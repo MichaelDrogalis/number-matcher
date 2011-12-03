@@ -15,3 +15,7 @@
 .ending {
     display: inline-block;
 }
+
+.selected {
+    color: green;
+}
