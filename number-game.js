@@ -12,16 +12,30 @@ var formatted_b = formattedNumber(b);
 var trick_numbers = makeTrickNumbers(a, b); 
 var board = makeBoard(formatted_a, formatted_b, trick_numbers);
 
+var MAX_SELECTED = 2;
+var n_selected = 0;
+
 $(document).ready(function() {
     var index = 0;
     
     $(".number").each(function() {
-       $(this).text(board[index]);
-       index++;
+        $(this).text(board[index]);
+        index++;
     });
     
     $(".number").click(function() {
-        $(this).toggleClass("selected");
+        if ($(this).hasClass("selected")) {
+            $(this).toggleClass("selected");
+            
+            if (n_selected > 0) {
+                n_selected--;
+            }
+        } else {
+            if (n_selected < MAX_SELECTED) {
+                n_selected++;
+                $(this).toggleClass("selected");
+            }
+        }
     });
 });
 
