@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
     
     $(".number").click(function() {
-        alert($(this).val());
+        $(this).toggleClass("selected");
     });
 });
 
