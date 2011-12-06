@@ -58,7 +58,7 @@ function makeSimiliarNumber(number, used_numbers) {
                 
     do {
         similiar_number = formattedNumber(similiarNumber(number));
-    } while ((similiar_number == number) || contains(similiar_number, used_numbers));
+    } while ((similiar_number == number) || (contains(used_numbers, similiar_number)));
                 
     return similiar_number;
 }
