@@ -72,7 +72,7 @@ function makeSimiliarNumber(number, used_numbers) {
 
 function addsToMax(used_numbers, similiar_number) {
 	var matches = $.map(used_numbers, function(k) {
-	   return (parseFloat(k) + parseFloat(similiar_number)) == 10;
+	   return (formattedNumber(parseFloat(k)) + similiar_number) == MAX;
 	});
 	
 	return contains(matches, true);
