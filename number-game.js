@@ -127,14 +127,16 @@ function checkWin() {
             return this.innerHTML;
         });
         
-        if (contains(selected, formatted_b)) {
-            if (contains(selected, formatted_a)) {
-                $("#status").text("Right");
-            } else {
-                $("#status").text("Wrong");
-            }
+        if (contains(selected, formatted_a) && contains(selected, formatted_b)) {
+            $("#status").text("Right");
+            
+            $("#status").removeClass("wrong");
+            $("#status").addClass("right");
         } else {
             $("#status").text("Wrong");
+            
+            $("#status").removeClass("right");
+            $("#status").addClass("wrong");
         }
     }
 }

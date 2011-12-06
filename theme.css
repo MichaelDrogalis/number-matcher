@@ -25,3 +25,11 @@
     margin-right: 150px;
     font-size: 55px;
 }
+
+.right {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
