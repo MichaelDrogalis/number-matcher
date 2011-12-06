@@ -46,6 +46,10 @@
     color: red;
 }
 
+.yellow {
+    color: yellow;
+}
+
 #restart {
     font-size: 28px;
 }

@@ -162,5 +162,11 @@ function showReplayButton() {
 }
 
 function highlightWinnersAsGreen() {
-    $(".correct").addClass("right");
+    $(".correct").each(function() {
+        if ($(this).hasClass("selected")) {
+            $(this).addClass("yellow");
+        } else {
+            $(this).addClass("right");
+        }
+    });
 }
