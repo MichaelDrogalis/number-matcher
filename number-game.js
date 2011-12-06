@@ -20,6 +20,11 @@ $(document).ready(function() {
     
     $(".number").each(function() {
         $(this).text(board[index]);
+        
+        if ((board[index] == formatted_a) || (board[index] == formatted_b)) {
+            $(this).addClass("correct");
+        }
+        
         index++;
     });
     
@@ -141,6 +146,7 @@ function checkWin() {
             $("#status").addClass("wrong");
             
             highlightLosersAsRed();
+            highlightWinnersAsGreen();
         }
         
         showReplayButton();
@@ -153,4 +159,8 @@ function highlightLosersAsRed() {
 
 function showReplayButton() {
     $("#replay").show();
+}
+
+function highlightWinnersAsGreen() {
+    $(".correct").addClass("right");
 }
