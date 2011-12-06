@@ -65,9 +65,17 @@ function makeSimiliarNumber(number, used_numbers) {
                 
     do {
         similiar_number = formattedNumber(similiarNumber(number));
-    } while ((similiar_number == number) || (contains(used_numbers, similiar_number)));
+    } while ((similiar_number == number) || (contains(used_numbers, similiar_number)) || (addsToMax(used_numbers, similiar_number)));
                 
     return similiar_number;
+}
+
+function addsToMax(used_numbers, similiar_number) {
+	var matches = $.map(used_numbers, function(k) {
+	   return (parseFloat(k) + parseFloat(similiar_number)) == 10;
+	});
+	
+	return contains(matches, true);
 }
             
 function similiarNumber(number) {
