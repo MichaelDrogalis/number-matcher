@@ -26,6 +26,14 @@
     font-size: 55px;
 }
 
+#replay {
+    float: right;
+    margin-top: 150px;
+    margin-right: -150px;
+    background-color: gray;
+    padding: 15px;
+}
+
 .right {
     color: green;
 }
@@ -36,4 +44,8 @@
 
 .loser {
     color: red;
+}
+
+#restart {
+    font-size: 28px;
 }

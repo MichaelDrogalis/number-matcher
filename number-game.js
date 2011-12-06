@@ -39,6 +39,8 @@ $(document).ready(function() {
             }
         }
     });
+    
+    $("#replay").hide();
 });
 
 function makeInitialRandomNumber() {
@@ -140,9 +142,15 @@ function checkWin() {
             
             highlightLosersAsRed();
         }
+        
+        showReplayButton();
     }
 }
 
 function highlightLosersAsRed() {
     $(".selected").addClass("loser");
+}
+
+function showReplayButton() {
+    $("#replay").show();
 }
