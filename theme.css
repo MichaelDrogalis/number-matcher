@@ -19,3 +19,9 @@
 .selected {
     color: green;
 }
+
+#status {
+    float: right;
+    margin-right: 150px;
+    font-size: 55px;
+}
