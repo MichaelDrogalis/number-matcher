@@ -137,6 +137,12 @@ function checkWin() {
             
             $("#status").removeClass("right");
             $("#status").addClass("wrong");
+            
+            highlightLosersAsRed();
         }
     }
+}
+
+function highlightLosersAsRed() {
+    $(".selected").addClass("loser");
 }
